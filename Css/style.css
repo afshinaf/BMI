@@ -58,11 +58,44 @@ form input{
     color: #999;
 }
 
+.message:empty {
+    display: none;
+}
+
+form .message {
+    font-size: .7rem;
+    color: #f00;
+    margin: 0.5rem 0;
+    animation:  shake 0.7s  ;
+}
+
 .result {
     text-align: center;
     margin: 0.8rem 0;
 }
 
-,result:empty {
+.result:empty {
     display: none;
  }
+
+@keyframes shake{
+    0%{
+        transform: translateX(0)
+    }
+    20%{
+        transform: translateX(25px);
+    }
+    40%{
+        transform: translateX(-25px);
+    }
+
+    60%{
+        transform: translateX(10px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
