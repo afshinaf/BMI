@@ -7,6 +7,8 @@ const calculateBmi = (height, weight) => {
 
 const clearResult = () => {
     document.querySelector('#result').innerHTML = '';
+    document.querySelector('.heightMessage').innerHTML = '';
+    document.querySelector('.weightMessage').innerHTML = '';
 }
 
 const form = document.querySelector('form');
@@ -14,9 +16,6 @@ const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     e.preventDefault()
     clearResult()
-
-    document.querySelector('.heightMessage').innerHTML = '';
-    document.querySelector('.weightMessage').innerHTML = '';
 
     let height = document.getElementById('height').value
     let weight = document.getElementById('weight').value
@@ -55,3 +54,7 @@ form.addEventListener('submit', (e) => {
 
     document.querySelector('#result').innerHTML = calculateBmi(height, weight)
 })
+
+document.querySelector('input#height').addEventListener('keydown', clearResult)
+document.querySelector('input#weight').addEventListener('keydown', clearResult)
+document.querySelector('#reset').addEventListener('click', clearResult)
